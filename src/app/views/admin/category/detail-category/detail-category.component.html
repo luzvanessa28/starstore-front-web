@@ -1,0 +1,14 @@
+<div class="wrapper">
+
+  <div class="detail" *ngIf="category">
+    <img class="detail__image" [src]="category.image" alt="img">
+
+    <div class="description">
+      <p class="description__category"> {{category.name}} </p>
+      <p> Fecha de creación: {{category.creationAt | date:'dd/MM/yyyy' }} </p>
+      <p> Fecha de modificación: {{category.updatedAt | date:'dd/MM/yyyy' }} </p>
+
+    </div>
+
+  </div>
+</div>

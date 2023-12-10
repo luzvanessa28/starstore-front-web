@@ -1,0 +1,11 @@
+<header class="header">
+
+  <h1 class="header__tittle"> Star Store </h1>
+
+  <div class="menu" *ngIf="showButtons">
+    <a class="menu__link" mat-stroked-button routerLink="/signin" routerLinkActive="menu__link--active"> Login </a>
+    <a class="menu__link" mat-stroked-button routerLink="/signup" routerLinkActive="menu__link--active"> Registro </a>
+  </div>
+
+  <a mat-stroked-button routerLink="/signin" *ngIf="logOut"> Cerrar sesión </a>
+</header>

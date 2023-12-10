@@ -1,0 +1,24 @@
+.wrapper
+  display: flex
+  justify-content: center
+
+.form
+  padding: 1.5rem
+  max-width: 50rem
+  margin: 0 auto
+  width: 25rem
+  display: flex
+  flex-direction: column
+  background: #b6a9d8
+  border-radius: 0.8rem
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+  &__grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+    // grid-gap: 1rem 2.5rem
+  &__btn
+    width: 7rem
+    align-self: center
+  &__alert
+    align-self: center
+    margin: 1rem

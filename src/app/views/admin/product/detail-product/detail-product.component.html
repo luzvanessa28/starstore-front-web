@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+  <div class="detail" *ngIf = "product">
+
+    <div class="content-images">
+      <img class="detail__image" *ngFor="let image of product.images" [src]="image" alt="product">
+    </div>
+
+    <div class="description">
+      <p> Categoría: {{ product.category.name }} </p>
+      <p class="description__title"> Producto: {{ product.title }} </p>
+      <p> Precio: ${{ product.price }} </p>
+      <p> Descripción: {{ product.description }} </p>
+      <p> Fecha de creación: {{ product.creationAt | date:'dd/MM/yyyy' }} </p>
+      <p> Fecha de modificación: {{ product.updatedAt | date:'dd/MM/yyyy' }} </p>
+    </div>
+
+  </div>
+</div>

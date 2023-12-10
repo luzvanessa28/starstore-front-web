@@ -1,0 +1,38 @@
+.wrapper
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+
+.content-images
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 2.3rem 0.8rem
+  overflow: auto
+
+.detail
+  min-width: 12rem
+  max-width: 20rem
+  max-height: 31rem
+  height: -moz-max-content
+  height: max-content
+  padding: 1.5rem
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 15px
+  display: flex
+  flex-direction: column
+  align-items: center
+  border-radius: 15px 56px 20px 85px
+  &__image
+    width: 7rem
+    height: 7rem
+    max-width: 6rem
+    max-height: 20rem
+
+.description
+  padding-top: 1.5rem
+  text-align: center
+  font-family: emoji
+  font-size: 1.2rem
+  &__titlle
+    font-weight: bold
+    font-size: 1.6rem
