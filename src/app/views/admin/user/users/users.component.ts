@@ -36,8 +36,7 @@ export class UsersComponent implements OnInit {
   getUsers() {
     this.userService.getUsers()
       .subscribe((response: IUser[]) => {
-        // this.dataSource.data = response;
-        this.dataSource.data = [];
+        this.dataSource.data = response;
       });
   }
 
