@@ -13,7 +13,6 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { CommonModule } from '@angular/common';
-import { FilterCategoryPipe } from './shared/pipes/filter-category.pipe';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { FilterCategoryPipe } from './shared/pipes/filter-category.pipe';
     SignupComponent,
     HeaderComponent,
     AlertComponent,
-    ButtonComponent,
-    FilterCategoryPipe
+    ButtonComponent
   ],
   imports: [
     CommonModule,
