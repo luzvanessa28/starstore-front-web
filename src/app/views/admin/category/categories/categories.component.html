@@ -1,5 +1,10 @@
 <h1>Categorias</h1>
 
+<mat-form-field>
+  <mat-label>Buscar</mat-label>
+  <input matInput>
+</mat-form-field>
+
 <div *ngIf="!dataSource.data.length">
   <app-empty [message] = "'No hay categorías'"></app-empty>
 </div>

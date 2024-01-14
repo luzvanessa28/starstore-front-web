@@ -36,8 +36,7 @@ export class CategoriesComponent implements OnInit {
   getCategories() {
     this.categoryService.getCategories()
       .subscribe((response: ICategory[]) => {
-        // this.dataSource.data = response;
-        this.dataSource.data = [];
+        this.dataSource.data = response;
       });
   }
 
