@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
     SignupComponent,
     HeaderComponent,
     AlertComponent,
-    ButtonComponent
+    ButtonComponent,
   ],
   imports: [
     CommonModule,
