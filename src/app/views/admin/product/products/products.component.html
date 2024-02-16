@@ -1,12 +1,18 @@
-
 <div *ngIf="!dataSource.data.length">
   <app-empty [message] = "'No hay productos'"></app-empty>
 </div>
 
 <div class="table" [hidden]="!dataSource.data.length">
+
   <h1>Productos</h1>
 
-  <mat-table mat-table [dataSource]="dataSource">
+  <mat-form-field appearance="fill">
+    <mat-label>Buscar por nombre</mat-label>
+    <input matInput [(ngModel)]="search" placeholder="product">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-table mat-table [dataSource]="dataSource.data | productFilter: search">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell class="custom-header-cell" *matHeaderCellDef> ID </th>

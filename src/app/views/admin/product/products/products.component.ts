@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'price', 'operation'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  search: string = '';
 
   constructor(
     private productService: ProductService,
