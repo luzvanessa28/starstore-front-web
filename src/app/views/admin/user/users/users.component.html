@@ -2,7 +2,7 @@
 
 <mat-form-field appearance="fill">
   <mat-label>Buscar por nombre</mat-label>
-  <input matInput [(ngModel)]="search" placeholder="User">
+  <input matInput [(ngModel)]="search" placeholder="user">
   <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
 
@@ -12,7 +12,7 @@
 
 <div class="table" *ngIf="dataSource.data.length > 0">
 
-  <mat-table mat-table [dataSource]="dataSource.data | filterCategory: search">
+  <mat-table mat-table [dataSource]="dataSource.data | userFilter: search">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell class="custom-header-cell" *matHeaderCellDef> ID </th>
