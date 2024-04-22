@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { UserService } from 'src/app/core/services/user.service';
+//import { UserService } from 'src/app/core/services/user.service';
 import { REGEX } from 'src/app/shared/constants/regex';
 
 @Component({
@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   isError: boolean = false;
 
   constructor(
-    private userService: UserService,
+    //private userService: UserService,
     private fb: FormBuilder
   ) {
     this.validators();
@@ -26,6 +26,7 @@ export class SignupComponent implements OnInit {
   }
 
   save() {
+    /*
     this.userService.add(this.myForm.value)
       .subscribe(
         () => {
@@ -42,7 +43,7 @@ export class SignupComponent implements OnInit {
       this.message = "";
       this.isError = false;
     }, 3000);
-
+    */
   }
 
   get input(): { [key: string]: AbstractControl } {
