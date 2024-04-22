@@ -1,8 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { NotificationService } from 'src/app/core/services/notification.service';
-import { SystemErrorService } from 'src/app/core/services/system-error.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { IUser } from 'src/app/models/user.model';
 
@@ -12,23 +9,22 @@ import { IUser } from 'src/app/models/user.model';
   styleUrls: ['./users.component.sass']
 })
 export class UsersComponent implements OnInit {
-
-  displayedColumns: string[] = ['id', 'name', 'email', 'role', 'operation'];
-  dataSource = new MatTableDataSource();
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   search: string = '';
+  dataSource = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'name', 'role','operation'];
+  paginator: any;
 
   constructor(
-    private userService: UserService,
-    private alert: NotificationService,
-    private error: SystemErrorService
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
+    console.log("ngOnInit");
     this.getUsers();
   }
 
   ngAfterViewInit() {
+    console.log("ngAfterViewInit");
     if (this.paginator) {
       this.dataSource.paginator = this.paginator;
     }
@@ -36,21 +32,9 @@ export class UsersComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers()
-      .subscribe((response: IUser[]) => {
-        this.dataSource.data = response;
-      });
+    .subscribe((response: IUser[]) => {
+      this.dataSource.data = response;
+    });
   }
 
-  deleteUser(id:number) {
-    this.userService.deleteUser(id)
-      .subscribe(
-        () => {
-          this.alert.showAlert({ icon: "success", message: "Usuario eliminado" });
-          this.getUsers();
-        },
-        () => {
-          this.error.isError(true);
-        }
-      );
-  }
 }

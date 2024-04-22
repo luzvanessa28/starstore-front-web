@@ -14,26 +14,20 @@ export class UserService {
   });
 
   constructor(
-    private http: HttpClient
+    private http : HttpClient
   ) { }
 
-  public add(user: Object) {
-    return this.http.post(this.uri, user, { headers: this.httpHeaders });
+  public getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this.uri)
   }
 
-  public getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.uri);
+  public addUser(user: object) {
+    console.log("service method addUser")
+    return this.http.post(this.uri, user, {headers: this.httpHeaders})
   }
 
   public getById(id: number): Observable<IUser> {
-    return this.http.get<IUser>(`${this.uri}/${id}`);
-  }
-
-  public deleteUser(id: number) {
-    return this.http.delete(`${this.uri}/${id}`, { headers: this.httpHeaders });
-  }
-
-  public updateUser(id: number, user: Object) {
-    return this.http.put(`${this.uri}/${id}`, user, { headers: this.httpHeaders });
+    console.log("funcion getById service")
+    return this.http.get<IUser>(`${this.uri}/${id}`)
   }
 }
