@@ -4,4 +4,4 @@ export interface ICategory {
   image:      string;
   name:       string;
   updatedAt:  Date;
- }
+}

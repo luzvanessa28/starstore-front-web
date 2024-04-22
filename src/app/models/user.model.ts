@@ -1,3 +1,4 @@
+
 export interface IUser {
   avatar:     string;
   creationAt: Date;
@@ -5,11 +6,6 @@ export interface IUser {
   id:         number;
   name:       string;
   password:   string;
-  role:       Role;
+  role:       string;
   updatedAt:  Date;
- }
-
- export enum Role {
-  Admin = "admin",
-  Customer = "customer",
  }
