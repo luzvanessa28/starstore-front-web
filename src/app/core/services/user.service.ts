@@ -30,4 +30,8 @@ export class UserService {
     console.log("funcion getById service")
     return this.http.get<IUser>(`${this.uri}/${id}`)
   }
+
+  public updateUser(id: number, user: object) {
+    return this.http.put(`${this.uri}/${id}`, user, { headers: this.httpHeaders });
+  }
 }
